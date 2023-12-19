@@ -1,15 +1,17 @@
 package com.weeks2.strapi.controller;
+import com.weeks2.strapi.common.Constants;
 import com.weeks2.strapi.lesson.Lesson;
 import com.weeks2.strapi.service.LessonService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@Slf4j
 @RestController
-@RequestMapping("/api/v1/lesson")
+@RequestMapping(Constants.API+"/lesson")
 public class LessonController {
     @Autowired
     private LessonService lessonService;
@@ -24,7 +26,7 @@ public class LessonController {
     }
 
     @PostMapping
-    public ResponseEntity create(@RequestHeader HttpHeaders headers, @RequestBody Lesson.Attributes body) {
+    public ResponseEntity<String> create(@RequestHeader HttpHeaders headers, @RequestBody Lesson.Attributes body) {
         lessonService.create(headers,body);
         return ResponseEntity.ok("SUCCESSFUL");
     }
