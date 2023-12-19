@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
 @Service
 @Slf4j
 public class LessonService {
-    @Value("${api.lesson}")
+    @Value("${strapi.lesson}")
     private String url;
     @Autowired
     private ClientRest rest;

@@ -15,7 +15,7 @@ import org.springframework.web.client.RestTemplate;
 public class StrapiAuthService {
     @Autowired
     private RestTemplate restTemplate;
-    @Value("${api.auth}")
+    @Value("${strapi.auth}")
     String authApi;
 
     public ResponseEntity<AuthResponse> auth(AuthRequest authRequest) {
