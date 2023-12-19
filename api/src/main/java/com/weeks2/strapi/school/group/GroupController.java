@@ -1,5 +1,5 @@
 package com.weeks2.strapi.school.group;
-import com.weeks2.strapi.common.Constants;
+import com.weeks2.strapi.common.AppEndPointsSchool;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 @Slf4j
 @RestController
-@RequestMapping(Constants.SPRING_BASE_PATH_ +"/group")
+@RequestMapping(AppEndPointsSchool.SPRING_BASE_PATH_ +"/group")
 public class GroupController {
     @Autowired
     private GroupService groupService;

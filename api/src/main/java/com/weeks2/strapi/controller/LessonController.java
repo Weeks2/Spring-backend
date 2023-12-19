@@ -1,5 +1,5 @@
 package com.weeks2.strapi.controller;
-import com.weeks2.strapi.common.Constants;
+import com.weeks2.strapi.common.AppEndPointsSchool;
 import com.weeks2.strapi.lesson.Lesson;
 import com.weeks2.strapi.service.LessonService;
 import lombok.extern.slf4j.Slf4j;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 @Slf4j
 @RestController
-@RequestMapping(Constants.SPRING_BASE_PATH_ +"/lesson")
+@RequestMapping(AppEndPointsSchool.LESSON_PATH_)
 public class LessonController {
     @Autowired
     private LessonService lessonService;

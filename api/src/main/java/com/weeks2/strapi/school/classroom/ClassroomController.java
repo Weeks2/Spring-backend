@@ -1,5 +1,5 @@
 package com.weeks2.strapi.school.classroom;
-import com.weeks2.strapi.common.Constants;
+import com.weeks2.strapi.common.AppEndPointsSchool;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 @Slf4j
 @RestController
-@RequestMapping(Constants.SPRING_BASE_PATH_ +"/classroom")
+@RequestMapping(AppEndPointsSchool.SPRING_BASE_PATH_ +"/classroom")
 public class ClassroomController {
     @Autowired
     private ClassroomService classroomService;
