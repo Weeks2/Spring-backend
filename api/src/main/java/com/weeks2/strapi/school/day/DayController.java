@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 @Slf4j
 @RestController
-@RequestMapping(Constants.API+"/day")
+@RequestMapping(Constants.SPRING_BASE_PATH_ +"/day")
 public class DayController {
     @Autowired
     private DayService dayService;

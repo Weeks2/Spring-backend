@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 @Slf4j
 @RestController
-@RequestMapping(Constants.API+"/subject")
+@RequestMapping(Constants.SPRING_BASE_PATH_ +"/subject")
 public class SubjectController {
     @Autowired
     private SubjectService subjectService;

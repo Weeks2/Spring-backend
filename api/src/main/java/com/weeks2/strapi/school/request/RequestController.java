@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 @Slf4j
 @RestController
-@RequestMapping(Constants.API+"/request")
+@RequestMapping(Constants.SPRING_BASE_PATH_ +"/request")
 public class RequestController {
     @Autowired
     private RequestService requestService;

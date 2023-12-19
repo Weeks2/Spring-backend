@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 @Slf4j
 @RestController
-@RequestMapping(Constants.API+"/group")
+@RequestMapping(Constants.SPRING_BASE_PATH_ +"/group")
 public class GroupController {
     @Autowired
     private GroupService groupService;

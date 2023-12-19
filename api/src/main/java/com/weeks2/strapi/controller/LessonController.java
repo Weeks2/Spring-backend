@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 @Slf4j
 @RestController
-@RequestMapping(Constants.API+"/lesson")
+@RequestMapping(Constants.SPRING_BASE_PATH_ +"/lesson")
 public class LessonController {
     @Autowired
     private LessonService lessonService;

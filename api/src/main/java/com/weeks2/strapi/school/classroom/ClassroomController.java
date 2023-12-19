@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 @Slf4j
 @RestController
-@RequestMapping(Constants.API+"/classroom")
+@RequestMapping(Constants.SPRING_BASE_PATH_ +"/classroom")
 public class ClassroomController {
     @Autowired
     private ClassroomService classroomService;
