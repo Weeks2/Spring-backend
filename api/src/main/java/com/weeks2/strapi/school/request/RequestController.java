@@ -23,6 +23,11 @@ public class RequestController {
         return requestService.findById(headers,id);
     }
 
+    @DeleteMapping("/{id}/delete")
+    public List<Request.Attributes> delete(@RequestHeader HttpHeaders headers, @PathVariable("id") int id) {
+        return requestService.findById(headers,id);
+    }
+
     @PostMapping
     public ResponseEntity<String> create(@RequestHeader HttpHeaders headers, @RequestBody Request.Attributes body) {
         requestService.create(headers,body);

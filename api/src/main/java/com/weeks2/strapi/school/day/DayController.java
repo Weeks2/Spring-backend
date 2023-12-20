@@ -1,5 +1,6 @@
 package com.weeks2.strapi.school.day;
 import com.weeks2.strapi.common.AppEndPointsSchool;
+import com.weeks2.strapi.school.member.Member;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -21,6 +22,16 @@ public class DayController {
     @GetMapping("/{id}")
     public List<Day.Attributes> get(@RequestHeader HttpHeaders headers, @PathVariable("id") int id) {
         return dayService.findById(headers,id);
+    }
+
+    @DeleteMapping("/{id}/delete")
+    public List<Day.Attributes> delete(@RequestHeader HttpHeaders headers, @PathVariable("id") int id) {
+        return dayService.findById(headers,id);
+    }
+
+    @PutMapping("/{id}/put")
+    public List<Day.Attributes> put(@RequestHeader HttpHeaders headers, @PathVariable("id") int id){
+        return dayService.findById(headers, id);
     }
 
     @PostMapping

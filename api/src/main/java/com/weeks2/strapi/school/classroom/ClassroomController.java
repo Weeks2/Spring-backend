@@ -1,5 +1,6 @@
 package com.weeks2.strapi.school.classroom;
 import com.weeks2.strapi.common.AppEndPointsSchool;
+import com.weeks2.strapi.school.member.Member;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -21,6 +22,16 @@ public class ClassroomController {
     @GetMapping("/{id}")
     public List<Classroom.Attributes> get(@RequestHeader HttpHeaders headers, @PathVariable("id") int id) {
         return classroomService.findById(headers,id);
+    }
+
+    @DeleteMapping("/{id}/delete")
+    public List<Classroom.Attributes> delete(@RequestHeader HttpHeaders headers, @PathVariable("id") int id) {
+        return classroomService.findById(headers,id);
+    }
+
+    @PutMapping("/{id}/put")
+    public List<Classroom.Attributes> put(@RequestHeader HttpHeaders headers, @PathVariable("id") int id){
+        return classroomService.findById(headers, id);
     }
 
     @PostMapping

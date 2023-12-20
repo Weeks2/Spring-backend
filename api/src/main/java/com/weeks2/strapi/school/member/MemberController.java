@@ -23,6 +23,16 @@ public class MemberController {
         return memberService.findById(headers,id);
     }
 
+    @DeleteMapping("/{id}/delete")
+    public List<Member.Attributes> delete(@RequestHeader HttpHeaders headers, @PathVariable("id") int id) {
+        return memberService.findById(headers,id);
+    }
+
+    @PutMapping("/{id}/put")
+    public List<Member.Attributes> put(@RequestHeader HttpHeaders headers, @PathVariable("id") int id){
+        return memberService.findById(headers, id);
+    }
+
     @PostMapping
     public ResponseEntity<String> create(@RequestHeader HttpHeaders headers, @RequestBody Member.Attributes body) {
         memberService.create(headers,body);
