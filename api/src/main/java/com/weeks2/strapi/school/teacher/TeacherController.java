@@ -17,6 +17,11 @@ public class TeacherController {
         return teacherService.fetch(headers);
     }
 
+    @GetMapping("/init")
+    public String init() {
+        return "WORKS";
+    }
+
     @GetMapping("/{id}")
     public List<Teacher.Attributes> get(@RequestHeader HttpHeaders headers, @PathVariable("id") int id) {
         return teacherService.findById(headers,id);
