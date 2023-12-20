@@ -1,4 +1,5 @@
 package com.weeks2.strapi.school.teacher;
+import com.weeks2.strapi.common.AppEndPointsSchool;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
@@ -7,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/teacher")
+@RequestMapping(AppEndPointsSchool.TEACHER_PATH_)
 public class TeacherController {
     @Autowired
     private TeacherService teacherService;

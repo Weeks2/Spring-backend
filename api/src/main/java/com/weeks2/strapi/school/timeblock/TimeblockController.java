@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 @Slf4j
 @RestController
-@RequestMapping(AppEndPointsSchool.SPRING_BASE_PATH_ +"/timeblock")
+@RequestMapping(AppEndPointsSchool.TIMEBLOCK_PATH_)
 public class TimeblockController {
     @Autowired
     private TimeblockService timeblockService;

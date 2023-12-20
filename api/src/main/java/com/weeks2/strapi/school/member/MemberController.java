@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 @Slf4j
 @RestController
-@RequestMapping(AppEndPointsSchool.SPRING_BASE_PATH_ +"/member")
+@RequestMapping(AppEndPointsSchool.MEMBER_PATH_)
 public class MemberController {
     @Autowired
     private MemberService memberService;
