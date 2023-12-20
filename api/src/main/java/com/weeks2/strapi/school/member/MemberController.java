@@ -3,6 +3,7 @@ import com.weeks2.strapi.common.AppEndPointsSchool;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -35,7 +36,25 @@ public class MemberController {
 
     @PostMapping
     public ResponseEntity<String> create(@RequestHeader HttpHeaders headers, @RequestBody Member.Attributes body) {
-        memberService.create(headers,body);
-        return ResponseEntity.ok("SUCCESSFUL");
+        if(body.getRol() == null){
+            try{
+                if(body.getAccount().length() == 10){
+                    body.setRol("estudiante");
+                }
+                if(body.getAccount().length() == 6){
+                    body.setRol("profesor");
+                }
+            } catch(Exception e) {
+                System.out.println(e);
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Bad Request");
+            }
+        }
+        try{
+            memberService.create(headers,body);
+            return ResponseEntity.ok("SUCCESSFUL");
+        } catch (Exception e){
+            System.out.println(e);
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Bad Request");
+        }
     }
 }
